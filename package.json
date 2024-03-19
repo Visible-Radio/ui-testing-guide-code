@@ -13,9 +13,10 @@
     "init-msw": "msw init public/",
     "chromatic": "npx chromatic --project-token=chpt_f3effbaa54410c7",
     "test-storybook": "test-storybook"
-
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^8.0.2",
+    "axe-playwright": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
