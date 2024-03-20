@@ -10,6 +10,7 @@ const config = {
     // this is for manual checks
     // '@storybook/addon-a11y',
     // we'll also use axe-playwright to programatically check for accessibility issues during testing
+    '@storybook/addon-coverage',
   ],
   framework: {
     name: "@storybook/react-vite",

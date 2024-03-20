@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "init-msw": "msw init public/",
     "chromatic": "npx chromatic --project-token=chpt_f3effbaa54410c7",
-    "test-storybook": "test-storybook",
+    
+    "test-storybook": "test-storybook --coverage --coverageDirectory .storybook && nyc report --reporter=text -t coverage/storybook --report-dir .storybook",
     "cypress": "cypress open"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-coverage": "^1.0.1",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
