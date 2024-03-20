@@ -1,10 +1,10 @@
-
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 export default function Task({
   task: { id, title, state },
   onArchiveTask,
   onTogglePinTask,
   onEditTitle,
+  onDeleteTask,
 }) {
   return (
     <div
@@ -42,7 +42,13 @@ export default function Task({
           onChange={(e) => onEditTitle(e.target.value, id)}
         />
       </label>
-
+      <button
+        aria-label="delete"
+        className="delete-button"
+        onClick={() => onDeleteTask(id)}
+      >
+        <span className="icon-trash" />
+      </button>
       {state !== "TASK_ARCHIVED" && (
         <button
           className="pin-button"
@@ -51,7 +57,7 @@ export default function Task({
           aria-label={state === "TASK_PINNED" ? "unpin" : "pin"}
           key={`pinTask-${id}`}
         >
-         <span className={`icon-star`} />
+          <span className={`icon-star`} />
         </button>
       )}
     </div>
@@ -74,4 +80,6 @@ Task.propTypes = {
   onTogglePinTask: PropTypes.func.isRequired,
   /** Event to change the task title */
   onEditTitle: PropTypes.func.isRequired,
+  /** Event to delete the task */
+  onDeleteTask: PropTypes.func.isRequired,
 };
